@@ -91,3 +91,21 @@ if (bookingModal && closeModalBtn && bookingForm) {
         document.body.style.overflow = '';
     });
 }
+
+// Mobile Menu Toggle Logic
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const navLinks = document.querySelector('.nav-links');
+
+if (mobileMenuBtn && navLinks) {
+    mobileMenuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('mobile-active');
+    });
+
+    // Close menu when a link is clicked
+    const links = navLinks.querySelectorAll('a');
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('mobile-active');
+        });
+    });
+}
