@@ -842,6 +842,9 @@ ul { list-style: none; }
     display: flex;
     align-items: center;
     justify-content: center;
+    position: absolute;
+    top: 50px;
+    right: 15px;
   }
   .nav-links {
     display: none; /* Hidden by default on mobile */
