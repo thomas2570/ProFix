@@ -778,3 +778,131 @@ ul { list-style: none; }
 .form-group textarea {
   resize: vertical;
 }
+
+/* =========================================
+   RESPONSIVE DESIGN (Media Queries)
+   ========================================= */
+
+/* Tablet & Smaller Desktop */
+@media (max-width: 992px) {
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .hero-content h1 {
+    font-size: 48px;
+  }
+  
+  .hero-visual {
+    width: 100%;
+    height: 380px;
+  }
+  
+  .booking-bar {
+    max-width: 100%;
+  }
+}
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+  /* Typography */
+  h1 { font-size: 36px !important; }
+  h2 { font-size: 28px !important; }
+  
+  /* Layout Spacing */
+  .section-padding { padding: 40px 0; }
+  .hero { padding: 60px 0 40px; }
+  
+  /* Grids to Single Column */
+  .grid-2, 
+  .grid-3, 
+  .hero-grid,
+  .steps-grid,
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .col-span-4 {
+    grid-column: span 12; /* Full width on mobile */
+  }
+
+  /* Navigation */
+  .nav-links {
+    display: none; /* Hide middle links for clean mobile look */
+  }
+  .logo-text {
+    font-size: 24px;
+  }
+  .navbar .container-full {
+    padding: 0 16px;
+  }
+  .nav-cta .btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  /* Hero Section Specifics */
+  .hero-content {
+    order: 1; /* Keep text on top */
+  }
+  .hero-visual {
+    order: 2;
+    height: 300px; /* Shorter image on mobile */
+    margin-top: 20px;
+  }
+
+  /* Booking Search Bar */
+  .booking-bar {
+    flex-direction: column;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    gap: 10px;
+  }
+  
+  .booking-bar input {
+    background: white;
+    padding: 16px;
+    border-radius: 50px;
+    width: 100%;
+    border: 1px solid var(--color-neutral-300);
+  }
+  
+  .booking-bar button {
+    width: 100%;
+  }
+
+  /* Footer Adjustments */
+  .footer-bottom {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+  
+  .footer-professional {
+    padding: 60px 0 20px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .hero-content h1 { font-size: 32px !important; }
+  
+  /* Adjust Trust Bar */
+  .trust-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  /* Adjust Why Choose Us */
+  .feature-content {
+    padding-left: 0 !important;
+  }
+  
+  .flex-row {
+    align-items: center;
+  }
+}
