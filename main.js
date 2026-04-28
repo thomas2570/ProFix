@@ -109,3 +109,37 @@ if (mobileMenuBtn && navLinks) {
         });
     });
 }
+
+// Live Search Filtering Logic
+const searchInput = document.getElementById('heroSearchInput');
+const searchBtn = document.getElementById('heroSearchBtn');
+const searchableItems = document.querySelectorAll('.searchable-item');
+
+if (searchInput) {
+    const performSearch = () => {
+        const query = searchInput.value.toLowerCase().trim();
+        
+        searchableItems.forEach(item => {
+            const text = item.textContent.toLowerCase();
+            // If the query is empty or the item text includes the query, show it
+            if (query === '' || text.includes(query)) {
+                item.style.display = '';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+        
+        // If they click search, scroll down to the categories section to show results
+        if (query !== '' && event && event.type === 'click') {
+            document.getElementById('categories').scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
+    // Filter live as user types
+    searchInput.addEventListener('keyup', performSearch);
+    
+    // Optional: Also handle search button click
+    if (searchBtn) {
+        searchBtn.addEventListener('click', performSearch);
+    }
+}
