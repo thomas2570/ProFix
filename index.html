@@ -87,35 +87,35 @@
         <div class="container text-center">
             <h2 style="font-size: 40px; margin-bottom: 40px;">What are you looking for?</h2>
             <div class="category-grid">
-                <a href="#" class="benefit-card searchable-item">
+                <a href="#" class="benefit-card searchable-item open-booking-modal" data-service="cleaning">
                     <div class="benefit-icon">🧼</div>
                     <h3>Home Cleaning</h3>
                 </a>
-                <a href="#" class="benefit-card searchable-item">
+                <a href="#" class="benefit-card searchable-item open-booking-modal" data-service="ac">
                     <div class="benefit-icon">❄️</div>
                     <h3>AC Repair</h3>
                 </a>
-                <a href="#" class="benefit-card searchable-item">
+                <a href="#" class="benefit-card searchable-item open-booking-modal" data-service="plumbing">
                     <div class="benefit-icon">🚰</div>
                     <h3>Plumbing</h3>
                 </a>
-                <a href="#" class="benefit-card searchable-item">
+                <a href="#" class="benefit-card searchable-item open-booking-modal" data-service="electrical">
                     <div class="benefit-icon">⚡</div>
                     <h3>Electrical</h3>
                 </a>
-                <a href="#" class="benefit-card searchable-item">
+                <a href="#" class="benefit-card searchable-item open-booking-modal" data-service="cleaning">
                     <div class="benefit-icon">🛋️</div>
                     <h3>Sofa Cleaning</h3>
                 </a>
-                <a href="#" class="benefit-card searchable-item">
+                <a href="#" class="benefit-card searchable-item open-booking-modal" data-service="other">
                     <div class="benefit-icon">🔨</div>
                     <h3>Handyman</h3>
                 </a>
-                <a href="#" class="benefit-card searchable-item">
+                <a href="#" class="benefit-card searchable-item open-booking-modal" data-service="other">
                     <div class="benefit-icon">🧴</div>
                     <h3>Pest Control</h3>
                 </a>
-                <a href="#" class="benefit-card searchable-item">
+                <a href="#" class="benefit-card searchable-item open-booking-modal" data-service="other">
                     <div class="benefit-icon">🧺</div>
                     <h3>Laundry</h3>
                 </a>
@@ -144,7 +144,7 @@
                             <span>•</span>
                             <span>4-5 Hours</span>
                         </div>
-                        <button class="btn btn-primary w-full mt-auto open-booking-modal">Book Now</button>
+                        <button class="btn btn-primary w-full mt-auto open-booking-modal" data-service="cleaning">Book Now</button>
                     </div>
                 </div>
                 <div class="corporate-card p-0 overflow-hidden searchable-item">
@@ -159,7 +159,7 @@
                             <span>•</span>
                             <span>1-2 Hours</span>
                         </div>
-                        <button class="btn btn-primary w-full mt-auto open-booking-modal">Book Now</button>
+                        <button class="btn btn-primary w-full mt-auto open-booking-modal" data-service="ac">Book Now</button>
                     </div>
                 </div>
                 <div class="corporate-card p-0 overflow-hidden searchable-item">
@@ -173,7 +173,7 @@
                             <span>•</span>
                             <span>Under 1 Hour</span>
                         </div>
-                        <button class="btn btn-primary w-full mt-auto open-booking-modal">Book Now</button>
+                        <button class="btn btn-primary w-full mt-auto open-booking-modal" data-service="electrical">Book Now</button>
                     </div>
                 </div>
             </div>
@@ -297,7 +297,7 @@
                     </div>
                     <div class="form-group">
                         <label>Service Type</label>
-                        <select required>
+                        <select required id="bookingServiceSelect">
                             <option value="">Select a service...</option>
                             <option value="ac">AC Repair & Service</option>
                             <option value="cleaning">Home Deep Cleaning</option>

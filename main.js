@@ -55,12 +55,22 @@ const bookingButtons = document.querySelectorAll('.open-booking-modal');
 const bookingForm = document.getElementById('bookingForm');
 
 if (bookingModal && closeModalBtn && bookingForm) {
+    const serviceSelect = document.getElementById('bookingServiceSelect');
+
     // Open Modal
     bookingButtons.forEach(btn => {
         btn.addEventListener('click', (e) => {
             e.preventDefault();
             bookingModal.classList.add('active');
             document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            
+            // Auto-select service if data-service attribute exists
+            const serviceKey = btn.getAttribute('data-service') || btn.closest('.open-booking-modal')?.getAttribute('data-service');
+            if (serviceKey && serviceSelect) {
+                serviceSelect.value = serviceKey;
+            } else if (serviceSelect) {
+                serviceSelect.value = ''; // Reset if none
+            }
         });
     });
 
